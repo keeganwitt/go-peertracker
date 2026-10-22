@@ -21,6 +21,10 @@ linters:
     - wastedassign
     - whitespace
   settings:
+    staticcheck:
+      checks:
+        - SA*
+        - S1*
     govet:
       enable:
         - nilness
@@ -45,6 +49,11 @@ linters:
         path: pkg/common/peertracker/(peertracker_test|tracker_windows)\.go
         text: 'G115: integer overflow conversion'
         source: 'int32\(os\.Getpid\(\)\)|int32\(pid\)|uint32\(pid\)'
+      - linters:
+          - gosec
+        path: pkg/common/peertracker/uds_linux\.go
+        text: 'G115: integer overflow conversion'
+        source: 'GetsockoptUcred\(int\(fd\)'
     paths:
       - .*\.pb\.go
       - testdata$
