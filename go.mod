@@ -2,6 +2,8 @@ module github.com/spiffe/spire
 
 go 1.23.6
 
+toolchain go1.26.10
+
 require (
 	github.com/Microsoft/go-winio v0.6.2
 	github.com/google/go-cmp v0.6.0
