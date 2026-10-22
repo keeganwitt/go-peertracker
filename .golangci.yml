@@ -39,6 +39,12 @@ linters:
       - common-false-positives
       - legacy
       - std-error-handling
+    rules:
+      - linters:
+          - gosec
+        path: pkg/common/peertracker/(peertracker_test|tracker_windows)\.go
+        text: 'G115: integer overflow conversion'
+        source: 'int32\(os\.Getpid\(\)\)|int32\(pid\)|uint32\(pid\)'
     paths:
       - .*\.pb\.go
       - testdata$
