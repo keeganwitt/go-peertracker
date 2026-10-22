@@ -524,7 +524,7 @@ $(golangci_lint_bin): | go-check
 	$(E)rm -rf $(dir $(golangci_lint_dir))
 	$(E)mkdir -p $(golangci_lint_dir)
 	$(E)mkdir -p $(golangci_lint_cache)
-	$(E)GOBIN=$(golangci_lint_dir) $(go_path) go install github.com/golangci/golangci-lint/cmd/golangci-lint@$(golangci_lint_version)
+	$(E)GOBIN=$(golangci_lint_dir) $(go_path) go install github.com/golangci/golangci-lint/v2/cmd/golangci-lint@$(golangci_lint_version)
 
 install-protoc-gen-go: $(protoc_gen_go_bin)
 
